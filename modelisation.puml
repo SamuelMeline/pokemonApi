@@ -1,0 +1,25 @@
+@startuml
+
+class Pokemon {
+  - name: string
+  - type: string
+  - stats: int
+  - health: int
+}
+
+class Fightable {
+  - health: int
+  + attack(): void
+}
+
+class Game {
+  - pokemon1: Pokemon
+  - pokemon2: Pokemon
+  + startBattle(): void
+}
+
+Pokemon --|> Fightable
+Game --|> Pokemon
+Game --|> Fightable
+
+@enduml
